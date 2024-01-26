@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Soccer.MVC.Data;
 
@@ -11,9 +12,10 @@ using Soccer.MVC.Data;
 namespace Soccer.MVC.Migrations
 {
     [DbContext(typeof(SoccerMVCContext))]
-    partial class SoccerMVCContextModelSnapshot : ModelSnapshot
+    [Migration("20240115024157_Initial3")]
+    partial class Initial3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,9 +63,6 @@ namespace Soccer.MVC.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Player_ID")
-                        .HasColumnType("int");
 
                     b.Property<string>("Years")
                         .IsRequired()

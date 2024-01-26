@@ -27,22 +27,18 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Country_ID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-                </td>
-            </tr>
+           <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                    <p class="card-title">@Html.DisplayFor(modelItem => item.Country_ID)<br/>
+                        class="card-title">@Html.DisplayFor(modelItem => item.Description)
+                    </p>
+                    
+                    <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-outline-primary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-outline-primary">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-outline-primary">Delete</a>
+                </div>
+                </div>
         }
     </tbody>
 </table>

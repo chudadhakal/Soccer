@@ -44,7 +44,13 @@ namespace Soccer.MVC.Controllers
                 return NotFound();
             }
 
-            return View(award);
+            var winners = await _context.Award_Season
+                .Where(m => m.Award_ID == id).ToListAsync();
+
+            var awardWinners = new AwardWinner();
+            awardWinners.Award = award;
+            awardWinners.AwardSeason = winners;
+            return View(awardWinners);
         }
 
         // GET: Awards1/Create
