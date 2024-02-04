@@ -1,11 +1,23 @@
-﻿
-<div class="text-center">
-    <div class="mt-4 p-5 bg-primary text-white rounded">
-        <p1>This section will feature news!!!!!!</p1><br />
+﻿@model IEnumerable<Soccer.MVC.Models.News>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>News</h1>
+
+@foreach (var item in Model)
+{
   
+    <div class="card">
+        <div class="card-body">
+   <p>          @Html.DisplayFor(modelItem => item.Title)<br />
+                @Html.DisplayFor(modelItem => item.Slug)<br />
+                @Html.DisplayFor(modelItem => item.Date_Created)<br />
+                @Html.DisplayFor(modelItem=> item.Date_Modified)<br />
+            </p>
+            <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-outline-primary float-end">Read More</a>
+        </div>
     </div>
-</div>
 
-
-
-
+}

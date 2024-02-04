@@ -13,11 +13,12 @@ namespace Soccer.MVC.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public ActionResult Index()
         {
+            ViewBag.LogoPath = "C:\\Users\\chuda\\source\\repos\\Soccer\\Logos";
             return View();
         }
-
+   
         public IActionResult Privacy()
         {
             return View();

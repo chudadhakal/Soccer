@@ -1,0 +1,20 @@
+﻿@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@model Soccer.MVC.Models.News
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <div class="container mt-3">
+        <div class="mt-4 p-5 bg-primary text-white rounded">
+            <h1>@Html.DisplayFor(model => model.Title)</h1>
+            <p>
+                @Html.DisplayFor(model => model.Admin_ID)<br /><br />
+                <p1>Text goes here</p1>
+                @Html.DisplayFor(model => model.Admin_ID)
+            </p>
+        </div>
+    </div>  
+</div>
+

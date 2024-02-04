@@ -1,8 +1,11 @@
-﻿namespace Soccer.MVC.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Soccer.MVC.Models
 {
+    [Table("News")]
     public class News
     {
-        public int ID { get; set; }
+        public int ID{ get; set; }
         public string? Title { get; set; }
         public string? Slug { get; set; }
         public int Admin_ID { get; set; }

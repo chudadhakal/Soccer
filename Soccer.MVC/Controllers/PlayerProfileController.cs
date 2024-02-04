@@ -16,7 +16,7 @@ namespace Soccer.MVC.Controllers
         private readonly SoccerMVCContext _context;
 
 
-        public PlayerProfileController(SoccerMVCContext context) 
+        public PlayerProfileController(SoccerMVCContext context)
         {
             _context = context;
         }
@@ -25,6 +25,22 @@ namespace Soccer.MVC.Controllers
             return _context.Player != null ?
                          View(await _context.Player.ToListAsync()) :
                          Problem("Entity set 'SoccerMVCContext.Player'  is null.");
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null || _context.Player == null)
+            {
+                return NotFound();
+            }
+
+            var player = await _context.Player
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (player == null)
+            {
+                return NotFound();
+            }
+            return View();
         }
     }
 }

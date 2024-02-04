@@ -1,0 +1,27 @@
+﻿@model Soccer.MVC.Models.Player
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <div class="container mt-3">
+        <div class="mt-4 p-5 bg-primary text-white rounded">
+            <h1>@Html.DisplayFor(model => model.Name)</h1>
+            <p>
+                @Html.DisplayFor(model => model.Country_ID)<br /><br />
+                @Html.DisplayFor(model => model.Description)
+            </p>
+        </div>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Winner</th>
+            <th scope="col">Year</th>
+        </tr>
+    </thead>
+</table>

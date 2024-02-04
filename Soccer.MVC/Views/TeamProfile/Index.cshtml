@@ -1,10 +1,21 @@
-﻿
-<div class="text-center">
-    <div class="mt-4 p-5 bg-primary text-white rounded">
-        <p1>This section will feature team profile!!!!!!</p1><br />
+﻿@model IEnumerable<Soccer.MVC.Models.Team>
+@{
+    ViewData["Title"] = "Index";
+}
 
+<h1>Team Profile</h1>
+
+@foreach (var item in Model)
+{
+    <div class="card">
+        <div class="card-body">
+             <p class="card-text">
+                @Html.DisplayFor(modelItem => item.Name)<br />
+                </p>
+            <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-outline-primary float-end">View Award Details</a>
+        </div>
     </div>
-</div>
+}
 
 
 

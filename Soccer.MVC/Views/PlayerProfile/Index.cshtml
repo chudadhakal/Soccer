@@ -32,11 +32,8 @@
                     <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
                     <p class="card-title">@Html.DisplayFor(modelItem => item.Country_ID)<br/>
                         class="card-title">@Html.DisplayFor(modelItem => item.Description)
-                    </p>
-                    
-                    <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-outline-primary">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-outline-primary">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-outline-primary">Delete</a>
+                    </p>                  
+                    <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-outline-primary">Details</a>
                 </div>
                 </div>
         }
