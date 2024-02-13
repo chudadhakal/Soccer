@@ -1,10 +1,12 @@
-﻿namespace Soccer.MVC.Models
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Soccer.MVC.Models
 {
+    [Keyless]
     public class Player_Team
     {
-        public int? ID { get; set; }
-        public string? Name { get; set; }
-        public int Country_ID { get; set; }
-        public string? Description { get; set; }
+        public int? Player_ID { get; set; }
+
+        public int? Team_ID { get; set; }
     }
 }

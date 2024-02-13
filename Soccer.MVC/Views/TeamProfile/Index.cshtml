@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Soccer.MVC.Models.Team>
+﻿@model IEnumerable<Soccer.MVC.Models.Player_Team>
 @{
     ViewData["Title"] = "Index";
 }
@@ -10,9 +10,9 @@
     <div class="card">
         <div class="card-body">
              <p class="card-text">
-                @Html.DisplayFor(modelItem => item.Name)<br />
+                @Html.DisplayFor(modelItem => item.Player_ID)<br />
                 </p>
-            <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-outline-primary float-end">View Award Details</a>
+            <a asp-action="Details" asp-route-id="@item.Team_ID" class="btn btn-outline-primary float-end">View Award Details</a>
         </div>
     </div>
 }

@@ -17,9 +17,12 @@ namespace Soccer.MVC.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return _context.Player_Team != null ?
-                 View(await _context.Player_Team.ToListAsync()) :
-                 Problem("Entity set 'SoccerMVCContext.Player_Team' is null.");
+            //var result = _context.Player_Team != null ?
+            //      View(await _context.Player_Team.ToListAsync()) :
+            //      Problem("Entity set 'SoccerMVCContext.Player_Team' is null.");
+            var result = _context.Player_Team != null ?
+                   await _context.Player_Team.ToListAsync() : null;
+            return View(result);
         }
     }
 }
