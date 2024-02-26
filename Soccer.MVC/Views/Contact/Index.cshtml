@@ -1,0 +1,25 @@
+﻿<!-- Index.cshtml -->
+@model Contact
+
+<h2>Contact Us</h2>
+<form asp-action="Index" method="post">
+    <div>
+        <label>Name:</label>
+        <input type="text" asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label>Email:</label>
+        <input type="email" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label>Message:</label>
+        <textarea asp-for="Message"></textarea>
+        <span asp-validation-for="Message"></span>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<!-- ThankYou.cshtml -->
+<h2>Thank you for contacting us!</h2>
