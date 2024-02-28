@@ -24,9 +24,11 @@
         </tr>
     </thead>
     <tbody>      
-        @foreach(var award in Model.AwardSeason){
+        @foreach(var award in Model.WinnerList){
         <tr>         
-            <td>@award.Player_ID</td> 
+
+            <td>@award.Award_Name</td>
+            <td>@award.Player_Name</td> 
             <td>@award.Years</td>
        </tr>
         }

@@ -7,5 +7,6 @@
         public int Award_ID { get; set; }
         public string Years { get; set; }
         public int Player_ID { get; set; }
+     
     }
 }

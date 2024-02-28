@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Soccer.MVC.Data;
 using Soccer.MVC.Models;
+using Soccer.MVC.Models.ViewModels;
 
 namespace Soccer.MVC.Controllers
 {
@@ -46,10 +47,24 @@ namespace Soccer.MVC.Controllers
 
             var winners = await _context.Award_Season
                 .Where(m => m.Award_ID == id).ToListAsync();
+            var query = from w in winners
+                        join player in _context.Player on w.Player_ID equals player.ID
+                        select new WinnerList
+                        {
+                            Award_Name = w.Name,
+                            Player_ID = w.Player_ID,
+                            Player_Name = player.Name,
+                            Years = w.Years
+                        };
+
 
             var awardWinners = new AwardWinner();
             awardWinners.Award = award;
             awardWinners.AwardSeason = winners;
+            
+            awardWinners.WinnerList = query.ToList();
+
+
             return View(awardWinners);
         }
 

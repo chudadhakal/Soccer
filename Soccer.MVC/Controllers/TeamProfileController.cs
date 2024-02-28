@@ -3,6 +3,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Soccer.MVC.Data;
+using Soccer.MVC.Models.ViewModels;
+using Soccer.MVC.Models;
 
 namespace Soccer.MVC.Controllers
 {
@@ -24,5 +26,22 @@ namespace Soccer.MVC.Controllers
                    await _context.Player_Team.ToListAsync() : null;
             return View(result);
         }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null || _context.Player_Team == null)
+            {
+                return NotFound();
+            }
+
+            var award = await _context.Player_Team
+                .FirstOrDefaultAsync(m => m.Team_ID == id);
+            if (award == null)
+            {
+                return NotFound();
+            }
+            return View();
+        }
+
     }
 }

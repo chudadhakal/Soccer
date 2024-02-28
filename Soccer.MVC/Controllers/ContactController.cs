@@ -17,6 +17,8 @@ namespace Soccer.MVC.Controllers
             {
                 // Process the contact form (e.g., send email, save to database, etc.)
                 // Redirect to a thank you page or show a success message
+
+
                 return RedirectToAction("ThankYou");
             }
             // If model state is not valid, redisplay the form with validation errors
